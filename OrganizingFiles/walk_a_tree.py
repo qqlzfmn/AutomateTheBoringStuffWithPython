@@ -14,14 +14,13 @@ for i in [r'.\delicious\cats\catnames.txt', r'.\delicious\cats\zophie.jpg',
     f = open(i, 'w')
     f.close()
 
-# walk the tree
+# 遍历文件夹，os.walk() 的返回值有三个，分别是当前文件夹名、子文件夹名、子文件名
 for folderName, subfolders, filenames in os.walk(r'delicious'):
     print(r'The current folder is ' + folderName)
     for subfolder in subfolders:
         print(r'SUBFOLDER OF ' + folderName + r': ' + subfolder)
     for filename in filenames:
         print(r'FILE INSIDE ' + folderName + r': ' + filename)
-
-    print(r'')
+    print()
 
 shutil.rmtree(r'delicious')
