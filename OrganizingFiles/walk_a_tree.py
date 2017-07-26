@@ -1,6 +1,6 @@
 import os, shutil
 
-os.chdir('F:\workspace\Python\AutomateTheBoringStuffWithPython\OrganizingFiles')
+# os.chdir('F:\workspace\Python\AutomateTheBoringStuffWithPython\OrganizingFiles')
 
 # 创建如图 tree.jpg 的目录关系
 for i in [r'delicious', r'delicious\cats',

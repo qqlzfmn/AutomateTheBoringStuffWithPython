@@ -38,12 +38,12 @@ for amerFilename in os.listdir('.'):
     euroFilename = beforePart + dayPart + '-' + monthPart + '-' + yearPart + afterPart
 
     # Get the full, absolute file paths.
-    absWorkingDir = os.path.abspath('.') # 取当前工作目录的绝对路径
-    amerFilename = os.path.join(absWorkingDir, amerFilename) # 生成美国日期文件的绝对路径
-    euroFilename = os.path.join(absWorkingDir, euroFilename) # 生成欧洲日期文件的绝对路径
+    absWorkingDir = os.path.abspath('.')  # 取当前工作目录的绝对路径
+    amerFilename = os.path.join(absWorkingDir, amerFilename)  # 生成美国日期文件的绝对路径
+    euroFilename = os.path.join(absWorkingDir, euroFilename)  # 生成欧洲日期文件的绝对路径
 
     # Rename the files.
-    print('Renaming "%s" to "%s"...' % (amerFilename, euroFilename)) # 打印将要改名的文件以确认
+    print('Renaming "%s" to "%s"...' % (amerFilename, euroFilename))  # 打印将要改名的文件以确认
     # shutil.move(amerFilename, euroFilename) # 确认完成后，进行正式改名
 
 """
