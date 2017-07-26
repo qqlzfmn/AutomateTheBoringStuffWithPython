@@ -10,20 +10,20 @@ namePattern = re.compile(r'(spam)(%d){3}(\.txt)')
 
 def fill(folder):
     # TODO: Rewrite all!
-    files = []
-    for folderName, subfolders, filenames in os.walk(folder):
-        for filename in filenames:
-            if re.match(namePattern, filename) != None:
-                files.append(filename)
-    files.sort()
-    maxFileNum = int(files[len(files) - 1][4 : 6])
-    for i in range(1 , maxFileNum + 1):
-        if i == int(files[i - 1][4 : 6]):
-            continue
-        else:
-            for j in range(i, maxFileNum + 1):
-                shutil.move()
-
+    # files = []
+    # for folderName, subfolders, filenames in os.walk(folder):
+    #     for filename in filenames:
+    #         if re.match(namePattern, filename) != None:
+    #             files.append(filename)
+    # files.sort()
+    # maxFileNum = int(files[len(files) - 1][4 : 6])
+    # for i in range(1 , maxFileNum + 1):
+    #     if i == int(files[i - 1][4 : 6]):
+    #         continue
+    #     else:
+    #         for j in range(i, maxFileNum + 1):
+    #             shutil.move()
+    #
     return
 
 
