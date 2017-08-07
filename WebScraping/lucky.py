@@ -1,5 +1,6 @@
 #! python3
 # lucky.py - Opens several Google search results.
+# Input [python3 lucky.py 数据] in CLI to search about 数据 and open the first three pages.
 import requests, sys, webbrowser, bs4
 
 print('\n正在百度…')  # display text while downloading the Google page
