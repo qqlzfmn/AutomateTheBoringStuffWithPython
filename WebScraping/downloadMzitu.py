@@ -17,11 +17,6 @@ def header(referer):  # 设置从浏览器调试程序得到的header信息
 urls = [''] * 5  # 开一个长度为5数据类型为string的空列表
 for i in range(5):
     urls[i] = 'http://www.mzitu.com/hot/page/%s/' % (i + 1)  # 最热分类一共有5页
-# urls = ['http://www.mzitu.com/hot/page/1/',
-#        'http://www.mzitu.com/hot/page/2/',
-#        'http://www.mzitu.com/hot/page/3/',
-#        'http://www.mzitu.com/hot/page/4/',
-#        'http://www.mzitu.com/hot/page/5/']# starting url
 os.makedirs('Mzitu', exist_ok=True)  # 创建总文件夹
 p = 0  # 已下载专辑数
 
