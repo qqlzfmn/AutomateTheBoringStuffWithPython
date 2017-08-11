@@ -30,7 +30,7 @@
     Win10点击 开始→设置→系统→关于，找到「OS版本」  
     对应「OS 版本」再回到[WebDriver - Microsoft Edge Development](http://go.microsoft.com/fwlink/?LinkId=619687)页面下载相应版本的WebDriver。  
     
-    下载完的WebDriver随意放在你想放的位置，然后复制这个路径，添加到系统环境变量的Path里。  
+    下载完的WebDriver随意放在你想放的位置，然后把这个路径添加到系统环境变量的Path里。  
     
     大功告成，再次执行```browser = webdriver.Edge()```你会发现错误提示没有了，而且会打开你的Edge浏览器（先别关这个浏览器，后面还要用到），还有错误提示的小伙伴请重启你的CMD或PowerShell。  
     
@@ -39,6 +39,9 @@
     执行完这一句你会发现之前打开的浏览器打开了一个百度首页。
     
 6. 在页面中寻找元素  
+    ```elem = browser.find_element_by_link_text('下一页 »')```  
+	该指令试图找到文本是'关于我'的\<a>元素。
+    
 	- selenium的WebDriver方法，用于寻找元素：
 	
 	|方法名|返回的WebElement对象/列表|
@@ -63,12 +66,32 @@
 	|is_selected()|对于复选框或单选框元素，如果该元素被选中，返回True，否则返回False|
 	|location|一个字典，包含键'x'和'y'，表示该元素在页面上的位置|
 	
-	例：  
-	```elem = browserfind_element_by_link_text('关于我')```  
-	该指令试图找到文本是'关于我'的\<a>元素。
-	
 7. 点击页面  
     ```elem.click()```  
     该指令模拟点击elem这个元素
     
-8. 
+8. 填写并提交表单
+    ```python 
+    search = browser.find_element_by_css_selector('#s')
+    search.send_keys('数字图像处理')
+    search.submit()
+    ```  
+    
+9. 发送特殊按键
+    ```python 
+    from selenium.webdriver.common.keys import Keys
+    elem = browser.find_element_by_partial_link_text('数字图像处理')
+    elem.send_keys(Keys.END)
+    ```
+    
+    特殊按键保存在```selenium.webdriver.common.keys.Keys```里  
+    所以需要```from selenium.webdriver.common.keys import Keys```  
+    然后随意选取一个元素，或者选取整个页面（即\<html>标签）  
+    ```elem = browser.find_element_by_tag_name('html')```  
+    最后向该元素发送按键```elem.send_keys(Keys.END)```
+    
+    - selenium.webdriver.common.keys模块中常用的变量
+    
+    |属性|含义|
+	|---|---|
+	|Keys.DOWN Keys.UP Keys.LEFT Keys.RIGHT|键盘箭头键|
