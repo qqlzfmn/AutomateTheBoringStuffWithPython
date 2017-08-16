@@ -14,6 +14,7 @@ print()
 
 print(sheet['A1'])
 print(sheet['A1'].value)
+print(type(sheet['A1'].value))
 c = sheet['B1']
 print(type(c))  # 数据类型：Cell
 print(c.value)  # Cell对象的value属性：获取单元格的值
