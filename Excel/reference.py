@@ -21,4 +21,3 @@ print(c.value)  # Cell对象的value属性：获取单元格的值
 print('Row ' + str(c.row) + ', Column ' + c.column + ' is ' + c.value)  # Cell对象的row属性：获取单元格行号；Cell对象的column属性：获取单元格列号
 print('Cell ' + c.coordinate + ' is ' + c.value)  # Cell对象的coordinate属性：获取单元格名称
 print(sheet['C1'].value)
-#
